@@ -15,9 +15,10 @@ body{
     font-weight: 400;
     font-style: normal;
     margin:0;
-    background:linear-gradient(180deg,#0e0e0e,#1a1a1a);
-    color:whitesmoke;
+    background:#1E201E;
+    color:white;
     overflow-x:hidden;
+    font-size: 15px;
 }
 
 /* PORTADA */
@@ -49,7 +50,7 @@ h1{
     font-size:18px;
     border:none;
     border-radius:30px;
-    background:linear-gradient(135deg,#8b0000,#d4af37);
+    background:linear-gradient(135deg,#222831,#E3E3E3);
     color:white;
 }
 
@@ -59,7 +60,7 @@ h1{
     background:
     linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
     url('imagenes/1.jpg') center/cover no-repeat;
-    color:#d4af37;
+    color:#EAEFEF;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -68,6 +69,7 @@ h1{
 
 /* TARJETAS */
 .card{
+    font-size: 15px;
     background:#141414;
     border-radius:26px;
     margin:25px auto;
@@ -80,14 +82,14 @@ h1{
 /* TITULOS */
 h2{
     font-family:'Playfair Display',serif;
-    color:#d4af37;
+    color:linear-gradient(135deg,#222831,#E3E3E3);
 }
 
 /* SEPARADOR */
 .separator{
     width:80px;
     height:3px;
-    background:linear-gradient(90deg,#8b0000,#d4af37);
+    background:linear-gradient(135deg,#222831,#E3E3E3);
     margin:15px auto;
     border-radius:10px;
 }
@@ -97,7 +99,7 @@ h2{
     display:block;
     margin-top:18px;
     padding:15px;
-    background:linear-gradient(135deg,#8b0000,#d4af37);
+    background:linear-gradient(135deg,#222831,#E3E3E3);
     color:white;
     border-radius:18px;
     text-decoration:none;
@@ -110,7 +112,7 @@ h2{
     height:300px;
     overflow:hidden;
     border-radius:18px;
-    border:2px solid #d4af37;
+    border:2px solid #e3e3e3;
 }
 .carousel img{
     position:absolute;
@@ -141,7 +143,7 @@ h2{
     position:fixed;
     bottom:20px;
     right:20px;
-    background:#FF0303;
+    background:linear-gradient(135deg,#222831,#E3E3E3);
     color:#d4af37;
     border-radius:50%;
     width:40px;
@@ -157,14 +159,7 @@ h2{
     width: 30px;
     height: 30px;
 }
-/* FOOTER */
-.footer{
-    text-align:center;
-    font-size:14px;
-    opacity:.8;
-    padding:20px;
-    color:whitesmoke;
-}
+
 h3{
     font-size: 12px;
 }
@@ -199,19 +194,29 @@ h4{
   }
 }
 
-.btn{
+.btn{  
   display:block;
   width:80%;
   max-width:320px;
   margin:18px auto; /* 👈 ESTO lo centra */
   padding:15px;
-  background:linear-gradient(135deg,#8b0000,#d4af37);
+  background:linear-gradient(135deg,#222831,#E3E3E3);
   color:white;
   border-radius:18px;
   text-decoration:none;
   border:none;
   font-size:16px;
   cursor:pointer;
+}
+h5{
+    font-size: 20px;
+}
+h6{
+    font-size:20px;
+    font-family:font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
 }
 
 
@@ -235,10 +240,10 @@ h4{
 
 <!-- HERO -->
 <section class="hero">
-    <h1>Valentina Betsabe</h1>
+    <h1>Valentina Aguilar</h1>
     <h3>"Acuerdate de tu creador en los dias de tu juventud"
     <br>Eclesiastés 12:1</h3>
-    <br>
+    <h5> 27 de Marzo de 2026</h5>    
     <div id="countdown"></div>
 </section>
 
@@ -252,35 +257,30 @@ h4{
     </em></p>
 </section>
 
-<!-- FAMILIA -->
-<section class="card reveal">
-    <h2>Mis Padres</h2>
-    <div class="separator"></div>
-    <p>Victor Manuel Aguilar
-    <br>
-    Diana Janette Ruiz</p>
-</section>
-
 <!-- DETALLES -->
 <section class="card reveal">
     <h2>Detalles del Evento</h2>
     <div class="separator"></div>
-    <p>📅 27 de Marzo de 2026</p>
-    <p>🕒 6:00 PM</p>
-    <p>📍 Salón Elquesea</p>
-    <a class="btn" href="https://www.google.com/maps?q=Salón+Jardines+del+Sol" target="_blank">
+    <p>Te esperamos para el Culto de Accion de Gracias<br>
+    📍 Iglesia Nacional Presbiteriana "Filadelfia"<br>
+    🕒 3:00 PM</p>
+    <a class="btn" href="https://maps.app.goo.gl/4YB2AQuW4cPrpwjEA" target="_blank">
+        Ver ubicación
+    </a>
+    <p>Al finalizar, celebraremos juntos en...<br>
+    📍 Salon Elquesea<br>
+    🕒 6:00 PM</p>
+    <a class="btn" href="https://maps.app.goo.gl/4YB2AQuW4cPrpwjEA" target="_blank">
         Ver ubicación
     </a>
 </section>
-
-<!-- ITINERARIO -->
+<!-- FAMILIA -->
 <section class="card reveal">
-    <h2>Itinerario</h2>
+    <h2>Mis Padres</h2>
     <div class="separator"></div>
-    <p>6:00 PM – </p>
-    <p>7:00 PM – </p>
-    <p>8:00 PM – </p>
-    <p>9:00 PM – </p>
+    <p>Victor Manuel Aguilar Castro
+    <br>
+    Diana Janette Ruiz </p>
 </section>
 
 <section class="card reveal">
@@ -299,14 +299,11 @@ h4{
 <section class="card reveal">
     <h2>Información Importante</h2>
     <div class="separator"></div>
-    <p>Algo</p>
-    <p>Algo</p>
+    <p>Vestimenta Formal</p>
+    <p>Evitar color negro</p>
 </section>
 
 <section class="card reveal">
-  <h2>Confirmación de Asistencia</h2>
-  <div class="separator"></div>
-
   <button class="btn" onclick="toggleForm()">
     Confirmar asistencia
   </button>
