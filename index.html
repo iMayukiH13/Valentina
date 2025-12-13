@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis XV Años | Valentina</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carattere&family=Poiret+One&display=swap" rel="stylesheet">
+<style>
+body{
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin:0;
+    background:linear-gradient(180deg,#0e0e0e,#1a1a1a);
+    color:whitesmoke;
+    overflow-x:hidden;
+}
+
+/* PORTADA */
+.cover{
+    font-family: "Carattere" cursive;
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url('imagenes/portada.gif') center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#d4af37;
+    z-index:999;
+    text-align:center;
+}
+h1{
+    font-family: "Carattere", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size:80px;
+    margin-bottom:10px;
+}
+.cover button{
+    margin-top:20px;
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(135deg,#8b0000,#d4af37);
+    color:white;
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url('imagenes/1.jpg') center/cover no-repeat;
+    color:#d4af37;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+}
+
+/* TARJETAS */
+.card{
+    background:#141414;
+    border-radius:26px;
+    margin:25px auto;
+    max-width:92%;
+    padding:28px;
+    box-shadow:0 12px 30px rgba(0,0,0,.6);
+    text-align:center;
+}
+
+/* TITULOS */
+h2{
+    font-family:'Playfair Display',serif;
+    color:#d4af37;
+}
+
+/* SEPARADOR */
+.separator{
+    width:80px;
+    height:3px;
+    background:linear-gradient(90deg,#8b0000,#d4af37);
+    margin:15px auto;
+    border-radius:10px;
+}
+
+/* BOTÓN */
+.btn{
+    display:block;
+    margin-top:18px;
+    padding:15px;
+    background:linear-gradient(135deg,#8b0000,#d4af37);
+    color:white;
+    border-radius:18px;
+    text-decoration:none;
+}
+
+/* GALERÍA CARRUSEL */
+.carousel{
+    position:relative;
+    width:100%;
+    height:300px;
+    overflow:hidden;
+    border-radius:18px;
+    border:2px solid #d4af37;
+}
+.carousel img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity 1s ease;
+}
+.carousel img.active{
+    opacity:1;
+}
+
+/* ANIMACIONES */
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* BOTÓN MÚSICA */
+.music-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#FF0303;
+    color:#d4af37;
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2px;
+    box-shadow:0 6px 15px rgba(0,0,0,.6);
+}
+
+.music-btn img{
+    width: 30px;
+    height: 30px;
+}
+/* FOOTER */
+.footer{
+    text-align:center;
+    font-size:14px;
+    opacity:.8;
+    padding:20px;
+    color:whitesmoke;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+<div class="cover" id="cover">
+    <button onclick="openInvitation()">Abrir Invitación</button>
+</div>
+
+<!-- MÚSICA -->
+<audio id="music" loop>
+<source src="audio/music.mp3">
+</audio>
+<div class="music-btn" onclick="toggleMusic()">
+    <img src="imagenes/sonido.png">
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Valentina</h1>
+    <p>Mis XV Años</p>
+</section>
+
+<!-- FRASE -->
+<section class="card reveal">
+    <p><em>
+        “Agradezco a Dios, a mi familia y a quienes me han acompañado en este camino.”
+    </em></p>
+</section>
+
+<!-- FAMILIA -->
+<section class="card reveal">
+    <h2>Mis Padres</h2>
+    <div class="separator"></div>
+    <p>Victor Manuel Aguilar
+    <br>
+    Diana Janette Ruiz</p>
+</section>
+
+<!-- CUENTA REGRESIVA -->
+<section class="card reveal">
+    <h2>Cuenta Regresiva</h2>
+    <div class="separator"></div>
+    <div id="countdown"></div>
+</section>
+
+<!-- DETALLES -->
+<section class="card reveal">
+    <h2>Detalles del Evento</h2>
+    <div class="separator"></div>
+    <p>📅 27 de Marzo de 2026</p>
+    <p>🕒 6:00 PM</p>
+    <p>📍 Salón Elquesea</p>
+    <a class="btn" href="https://www.google.com/maps?q=Salón+Jardines+del+Sol" target="_blank">
+        Ver ubicación
+    </a>
+</section>
+
+<!-- ITINERARIO -->
+<section class="card reveal">
+    <h2>Itinerario</h2>
+    <div class="separator"></div>
+    <p>6:00 PM – </p>
+    <p>7:00 PM – </p>
+    <p>8:00 PM – </p>
+    <p>9:00 PM – </p>
+</section>
+
+<section class="card reveal">
+    <h2>Galería</h2>
+    <div class="separator"></div>
+
+    <div class="carousel">
+        <img src="imagenes/1.jpg" class="active">
+        <img src="imagenes/2.jpg">
+        <img src="imagenes/3.jpg">
+        <img src="imagenes/4.jpg">
+    </div>
+</section>
+
+
+<!-- INFO -->
+<section class="card reveal">
+    <h2>Información Importante</h2>
+    <div class="separator"></div>
+    <p>Algo</p>
+    <p>Algo</p>
+</section>
+
+<div class="footer">
+    "Acuerdate de tu creador en los dias de tu juventud"
+    <br>
+    Eclesiatés 12:1
+</div>
+
+<script>
+/* ABRIR INVITACIÓN + MÚSICA */
+function openInvitation(){
+    document.getElementById("cover").style.display="none";
+    document.body.style.overflow="auto";
+
+    music.play();
+    playing=true;
+}
+
+/* MÚSICA */
+let music=document.getElementById("music");
+let playing=false;
+function toggleMusic(){
+    playing ? music.pause() : music.play();
+    playing=!playing;
+}
+
+/* ANIMACIONES SCROLL */
+const reveals=document.querySelectorAll(".reveal");
+window.addEventListener("scroll",()=>{
+    reveals.forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight-80){
+            el.classList.add("active");
+        }
+    });
+});
+
+/* CUENTA REGRESIVA */
+let fecha=new Date("Mar 21, 2026 18:00:00").getTime();
+setInterval(()=>{
+    let now=new Date().getTime();
+    let d=fecha-now;
+    let dias=Math.floor(d/(1000*60*60*24));
+    let hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));
+    let min=Math.floor((d%(1000*60*60))/(1000*60));
+    document.getElementById("countdown").innerHTML=
+    `${dias} días · ${hrs} horas · ${min} minutos`;
+},1000);
+
+/* CARRUSEL */
+let slides=document.querySelectorAll(".carousel img");
+let index=0;
+
+setInterval(()=>{
+    slides[index].classList.remove("active");
+    index=(index+1)%slides.length;
+    slides[index].classList.add("active");
+},3000);
+</script>
+
+</body>
+</html>
